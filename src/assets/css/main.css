@@ -1,0 +1,187 @@
+/*Banner css*/
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  
+}
+.banner_img {
+  width: 80%;
+}
+.banner h1 {
+  font-size: 41px;
+}
+.banner a {
+  text-decoration: none;
+  font-weight: 500;
+}
+.arrow_icon {
+  font-size: 19px;
+  margin-left: 30px;
+}
+/* Contact Part */
+.contact_form {
+  padding: 0px 40px;
+}
+.contact_title {
+  letter-spacing: 0.7rem;
+  color: royalblue;
+}
+.form-group input {
+  border-radius: 0.25rem;
+}
+.submit_btn {
+  padding: 10px 30px;
+}
+.contact_left img {
+  width: 90%;
+  margin-bottom: 70px;
+}
+
+/* Upload Image Part */
+
+.upload_section {
+  background-color: rgba(198, 226, 255, 0.3);
+  margin: 0;
+  max-width: 100%;
+  padding: 8rem 4rem 4rem;
+  border-radius: 600px / 100px;
+}
+
+.upload-icon {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 10px auto;
+}
+
+ul {
+  margin: 0;
+}
+
+.dropzone {
+  text-align: center;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #eeeeee;
+  color: #007aff;
+  margin-bottom: 20px;
+}
+.dropzone i {
+  font-size: 70px;
+  display: block;
+}
+
+
+.upload_sec_add {
+  background-color: #d8d8d8;
+  border-radius: 20px;
+  height: 150px;
+}
+
+/* Footer Part */
+
+.footer_ad {
+  background-color: #d8d8d8;
+  border-radius: 0.25rem;
+  height: 150px;
+}
+.footer_data li a {
+  color: #919aa3;
+  text-decoration: none;
+  font-weight: 400;
+}
+/* combine section */
+.combine_section {
+  /* background: url("../img/tpp3.png");  
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    resize: both;
+    background-repeat: no-repeat; */
+  background-color: #f7f8f9;
+}
+
+/*design*/
+.social_section {
+}
+.social_add {
+  background-color: #d8d8d8;
+  border-radius: 20px;
+}
+.imprt_instr_section {
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  height: 150px;
+}
+.insta_profile {
+  position: relative;
+}
+.whatsapp_profile {
+  position: relative;
+}
+.profile {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 24px;
+  left: 48px;
+  border-radius: 50%;
+}
+.profile2 {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 20px;
+  left: 18px;
+  border-radius: 50%;
+}
+.profile3 {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 142px;
+  left: 65px;
+  border-radius: 50%;
+}
+.imp_instr {
+  font-weight: 600;
+  color: #b5b5b5;
+}
+
+/* Crop Part */
+
+.ReactCrop div {
+  display: flex;
+  justify-content: center;
+}
+
+.ReactCrop__image {
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .social_add {
+    background-color: #d8d8d8;
+    height: 150px !important;
+    margin-top: 60px;
+  }
+  .whatsapp_profile {
+    margin-top: 64px;
+  }
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
