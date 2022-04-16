@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 function Design({ finalCroppedImage }) {
   return (
     <TransitionGroup>
-      <div className="container mb-5 social_section" id="main-container">
+      <div className="container mb-5 social_section">
         <div className="row h-100">
           <div className="col-lg-5 insta_profile overflow-scroll">
             <img
@@ -73,12 +73,8 @@ function Design({ finalCroppedImage }) {
               </>
             )} */}
           </div>
-
-          <div className="col-lg-2 social_add h-auto d-flex justify-content-center align-items-center fw-bolder">
-            add space
-          </div>
         </div>
-        <div className="col-12 mt-5 mb-5 d-flex flex-column justify-content-center align-items-center">
+        {/* <div className="col-12 mt-5 mb-5 d-flex flex-column justify-content-center align-items-center">
           <h5 className="fw-bold">important</h5>
           <p className="imp_instr text-center">
             we do not save any data or pictures. We care about privacy and
@@ -87,7 +83,7 @@ function Design({ finalCroppedImage }) {
         </div>
         <div className="upload_sec_add fw-bolder col-12 mt-4 d-flex justify-content-center align-items-center">
           ad space
-        </div>
+        </div> */}
       </div>
     </TransitionGroup>
   );

@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import Dropzone from "react-dropzone";
 import Design from "./Design";
+import InstagramDesign from "./InstagramDesign";
 import ReactCrop from "react-image-crop";
+import { ReactComponent as PlusIcon } from "../assets/icons/plus-circle.svg";
+
 import "react-image-crop/dist/ReactCrop.css";
 
 const UploadImg = () => {
   const [tempImage, setTempImage] = useState(null);
   const [cropImage, setcropImage] = useState(null);
   const [finalCroppedImage, setFinalCroppedImage] = useState(null);
+  const cropSection = useRef(null);
 
   const [crop, setCrop] = useState({
     aspect: 1 / 1,
@@ -24,6 +28,7 @@ const UploadImg = () => {
     acceptedFiles.map((file) => {
       setTempImage(window.URL.createObjectURL(file));
     });
+    cropSection?.current.scrollIntoView();
   };
 
   function getCroppedImg() {
@@ -57,13 +62,13 @@ const UploadImg = () => {
     setFinalCroppedImage(base64Image);
   }
   return (
-    <>
-      <div id="img-upload" className="container mb-5 p-4">
+    <section id="img-upload" className="upload_section">
+      <div className="container mb-5 p-4">
         <Dropzone onDrop={handleDrop} maxFiles={1} accept="image/*">
           {({ getRootProps, getInputProps }) => (
             <div {...getRootProps({ className: "dropzone" })}>
               <input {...getInputProps()} />
-              <i className="fa fa-plus-circle mb-4" aria-hidden="true"></i>
+              <PlusIcon className="upload-icon" />
 
               <small>
                 upload or drag <br /> or refresh to try again
@@ -73,43 +78,72 @@ const UploadImg = () => {
         </Dropzone>
         <div>
           <div className="row">
-            {tempImage && (
-              <div className="col-lg-12 mt-5 mb-5 d-flex align-align-items-center justify-content-center">
-                <>
-                  <ReactCrop
-                    src={tempImage}
-                    onImageLoaded={setcropImage}
-                    crop={crop}
-                    onChange={setCrop}
-                  />
-                </>
+            <div className="row mt-5 mb-5">
+              <div className="col-4 text-justify">
+                <h3>
+                  Select the part of the image that you wish to set as your
+                  profile.
+                </h3>
+                <p>
+                  Once you have selected the part you wish as your new profile
+                  pic. press the “Check Profile” button below. Everytime you
+                  select a new section of an image, or upload a new picture,
+                  make sure to hit the button below.
+                </p>
               </div>
-            )}
-            <div className="col-lg-12">
+              <div className="upload_sec_add fw-bolder col-8 d-flex justify-content-center align-items-center text-primary">
+                ad space
+              </div>
+            </div>
+
+            <div
+              ref={cropSection}
+              id="crop_img_section"
+              className="col-lg-12 d-flex align-align-items-center justify-content-center"
+            >
+              {tempImage && (
+                <ReactCrop
+                  src={tempImage}
+                  onImageLoaded={setcropImage}
+                  crop={crop}
+                  onChange={setCrop}
+                />
+              )}
+            </div>
+
+            <div className="col-lg-12 mt-5">
               <a className="btn btn-primary d-block" onClick={getCroppedImg}>
                 Check Profile
               </a>
             </div>
           </div>
         </div>
-        <div className="upload_sec_add fw-bolder col-12 mt-4 d-flex justify-content-center align-items-center">
-          ad space
-        </div>
-        <div className="row imprt_instr_section mt-4 p-2 p-md-2 h-auto">
-          <div className="col-md-5 p-2 d-flex flex-column justify-content-center align-items-md-start align-items-center">
-            <h5>Instagram</h5>
-            <p>Compatible with LinkedIn</p>
-            <p>WhatsApp, Instagram, etc.</p>
+        <div className="row mt-4 mb-4">
+          <div className="col-xl-2 col-lg-12 mb-xl-0 mb-2">
+            <div className="h-100 row  border border-primary d-flex flex-xl-column justify-content-lg-evenly">
+              <div className="social_links col-xl-12 col-lg-4 mb-xl-3">
+                <div className="social_links-item fw-bold">Instagram</div>
+                <div className="social_links-item">Facebook</div>
+                <div className="social_links-item">Whatsapp</div>
+                <div className="social_links-item">Tiktok</div>
+              </div>
+              <div className="col-xl-12 col-lg-4 social_add text-primary flex-xl-grow-1">
+                ad space
+              </div>
+            </div>
           </div>
-          <div className="col-md-5 p-2 d-flex flex-column justify-content-center align-items-md-start align-items-center">
-            <h5>WhatsApp</h5>
-            <p>Compatible with LinkedIn</p>
-            <p>WhatsApp, Instagram, etc.</p>
+          <div className="col-xl-8 col-12">
+            <InstagramDesign />
+            {/* <Design finalCroppedImage={finalCroppedImage} /> */}
+          </div>
+          <div className="col-xl-2 p-0 border border-primary">
+            <div className="h-100 social_add fw-bolder d-flex justify-content-center align-items-center text-primary">
+              ad space
+            </div>
           </div>
         </div>
       </div>
-      <Design finalCroppedImage={finalCroppedImage} />
-    </>
+    </section>
   );
 };
 export default UploadImg;
