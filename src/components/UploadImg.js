@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Dropzone from "react-dropzone";
 import Design from "./Design";
 import InstagramDesign from "./InstagramDesign";
 import ReactCrop from "react-image-crop";
 import { ReactComponent as PlusIcon } from "../assets/icons/plus-circle.svg";
-
 import "react-image-crop/dist/ReactCrop.css";
 import FacebookDesign from "./FacebookDesign";
 import WhatsappDesign from "./WhatsappDesign";
@@ -37,6 +36,9 @@ const UploadImg = () => {
   };
 
   function getCroppedImg() {
+    if (cropImage == null) {
+      return;
+    }
     const canvas = document.createElement("canvas");
     const scaleX = cropImage.naturalWidth / cropImage.width;
     const scaleY = cropImage.naturalHeight / cropImage.height;
@@ -172,18 +174,44 @@ const UploadImg = () => {
             </div>
           </div>
           <div className="col-xl-8 col-12">
-            {activeIndex === 0 && (
-              <InstagramDesign finalCroppedImage={finalCroppedImage} />
-            )}
-            {activeIndex === 1 && (
-              <FacebookDesign finalCroppedImage={finalCroppedImage} />
-            )}
-            {activeIndex === 2 && (
-              <WhatsappDesign finalCroppedImage={finalCroppedImage} />
-            )}
-            {activeIndex === 3 && (
-              <TiktokDesign finalCroppedImage={finalCroppedImage} />
-            )}
+            <TransitionGroup>
+              {activeIndex === 0 && (
+                <CSSTransition
+                  in={activeIndex === 0}
+                  timeout={500}
+                  classNames="fade"
+                >
+                  <InstagramDesign finalCroppedImage={finalCroppedImage} />
+                </CSSTransition>
+              )}
+              {activeIndex === 1 && (
+                <CSSTransition
+                  in={activeIndex === 1}
+                  timeout={500}
+                  classNames="fade"
+                >
+                  <FacebookDesign finalCroppedImage={finalCroppedImage} />
+                </CSSTransition>
+              )}
+              {activeIndex === 2 && (
+                <CSSTransition
+                  in={activeIndex === 2}
+                  timeout={500}
+                  classNames="fade"
+                >
+                  <WhatsappDesign finalCroppedImage={finalCroppedImage} />
+                </CSSTransition>
+              )}
+              {activeIndex === 3 && (
+                <CSSTransition
+                  in={activeIndex === 3}
+                  timeout={500}
+                  classNames="fade"
+                >
+                  <TiktokDesign finalCroppedImage={finalCroppedImage} />
+                </CSSTransition>
+              )}
+            </TransitionGroup>
           </div>
           <div className="col-xl-2 p-0 ">
             <div className="h-100 social_add fw-bolder d-flex justify-content-center align-items-center text-primary">
