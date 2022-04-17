@@ -5,7 +5,6 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: #ffffff;
-  
 }
 .banner_img {
   width: 80%;
@@ -51,11 +50,11 @@ body {
 } */
 
 .upload_section {
-background-image: url('../img/upload-bg.png');
-background-repeat: no-repeat;
-background-size: cover;
-background-position: top;
-padding-top: 5rem;
+  background-image: url("../img/upload-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  padding-top: 5rem;
 }
 
 .upload-icon {
@@ -73,7 +72,7 @@ ul {
   text-align: center;
   padding: 20px;
   border-radius: 30px;
-  background-color: rgba(216,216,216, 0.3);
+  background-color: rgba(216, 216, 216, 0.3);
   color: #007aff;
   margin-bottom: 20px;
 }
@@ -81,7 +80,6 @@ ul {
   font-size: 70px;
   display: block;
 }
-
 
 .upload_sec_add {
   background-color: #d8d8d8;
@@ -113,47 +111,45 @@ ul {
 
 /*design*/
 .social_section {
-  width:100%;
+  width: 100%;
 }
 
-.social_links{
-display:flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background-color: rgba(216,216,216, 0.3);
-border-radius: 20px;
-padding: 2rem 1rem;
-
+.social_links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(216, 216, 216, 0.3);
+  border-radius: 20px;
+  padding: 2rem 1rem;
 }
 
-.social_links-item{
+.social_links-item {
   /* border: 1px solid red; */
-  margin:5px;
-  padding:10px;
+  margin: 5px;
+  padding: 10px;
   text-transform: uppercase;
   border-bottom: 1px solid grey;
   cursor: pointer;
   transition: 0.2s ease;
 }
 
-.social_links-item:hover{
- font-weight: bold;
+.social_links-item:hover {
+  font-weight: bold;
 }
 
-.social_links-item:last-of-type{
-  border:none;
+.social_links-item:last-of-type {
+  border: none;
 }
 
 .social_add {
   background-color: #d8d8d8;
   border-radius: 20px;
   font-weight: bold;
-  display:flex;
+  display: flex;
   /* flex-grow: 1; */
   align-items: center;
   justify-content: center;
-  
 }
 .imprt_instr_section {
   background-color: #f3f3f3;
@@ -231,19 +227,178 @@ padding: 2rem 1rem;
   transition: opacity 1000ms;
 }
 
-.instagram_design{
-  display:flex;
+.instagram_design,
+.facebook_design {
+  display: flex;
   flex-direction: column;
 }
 
-.instagram_design-pic1{
-  width:250px;
+.instagram_design-base1 {
+  width: 250px;
 }
 
-.instagram_design-pic2{
-  width:280px;
+.instagram_design-base2 {
+  width: 280px;
 }
 
-.instagram_design-pic3{
-  width:250px;
+.instagram_design-base3 {
+  width: 250px;
+}
+
+.facebook_design-base2 {
+  width: 300px;
+}
+
+.facebook_design-base3 {
+  width: 300px;
+}
+
+.whatsapp_design-base1 {
+  width: 350px;
+}
+
+.whatsapp_design-base2 {
+  width: 345px;
+}
+.whatsapp_design-base3 {
+  width: 320px;
+}
+
+.whatsapp_design-base4 {
+  width: 320px;
+}
+
+.instagram_design-profile1 {
+  position: absolute;
+  top: 6px;
+  left: 25px;
+  border-radius: 50%;
+  width: 87px;
+  height: 87px;
+}
+
+.instagram_design-profile2 {
+  position: absolute;
+  bottom: 25px;
+  left: 5px;
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+}
+
+.instagram_design-profile3 {
+  position: absolute;
+  bottom: 25px;
+  right: 94px;
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+}
+
+.instagram_design-profile4 {
+  position: absolute;
+  top: 23px;
+  left: 23px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.instagram_design-profile5 {
+  position: absolute;
+  top: 23px;
+  left: 23px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.instagram_design-profile6 {
+  position: absolute;
+  top: 35px;
+  left: 60px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.facebook_design-profile1 {
+  position: absolute;
+  top: 103px;
+  left: 138px;
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+}
+
+.facebook_design-profile2 {
+  position: absolute;
+  top: 65px;
+  left: 67px;
+  border-radius: 50%;
+  width: 135px;
+  height: 135px;
+}
+
+.facebook_design-profile3 {
+  position: absolute;
+  top: 66px;
+  left: 46px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.facebook_design-profile4 {
+  position: absolute;
+  top: 7px;
+  left: 28px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.whatsapp_design-profile1 {
+  position: absolute;
+  top: 20px;
+  left: 36px;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+}
+
+.whatsapp_design-profile2 {
+  position: absolute;
+  top: 219px;
+  right:68px;
+  border-radius: 50%;
+  width: 49px;
+  height: 49px;
+}
+
+.whatsapp_design-profile3 {
+  position: absolute;
+  top: 32px;
+  left: 14px;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+}
+
+.whatsapp_design-profile4 {
+  position: absolute;
+  top: 160px;
+  left: 7px;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+}
+
+.whatsapp_design-profile5 {
+  position: absolute;
+  top: 77px;
+  left: -2px;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
 }

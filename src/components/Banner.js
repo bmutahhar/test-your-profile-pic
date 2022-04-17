@@ -3,7 +3,7 @@ import React from "react";
 function Banner() {
   return (
     <>
-      <div className="container mt-5 p-4 mb-5">
+      <div id="home" className="container mt-5 p-4 mb-5">
         <div className="row">
           <div className="col-lg-6 d-flex justify-content-center">
             <img

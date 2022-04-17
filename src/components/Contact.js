@@ -2,7 +2,7 @@ import React from "react";
 import "../assets/css/main.css";
 const Contact = () => {
   return (
-    <div className="container mb-5 p-4">
+    <div id="contact_section" className="container mb-5 p-4">
       <div className="row">
         <div className="col-md-6">
           <div className="contact_left d-flex flex-column justify-content-center">

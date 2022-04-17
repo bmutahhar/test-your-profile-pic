@@ -7,11 +7,14 @@ import ReactCrop from "react-image-crop";
 import { ReactComponent as PlusIcon } from "../assets/icons/plus-circle.svg";
 
 import "react-image-crop/dist/ReactCrop.css";
+import FacebookDesign from "./FacebookDesign";
+import WhatsappDesign from "./WhatsappDesign";
 
 const UploadImg = () => {
   const [tempImage, setTempImage] = useState(null);
   const [cropImage, setcropImage] = useState(null);
   const [finalCroppedImage, setFinalCroppedImage] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const cropSection = useRef(null);
 
   const [crop, setCrop] = useState({
@@ -61,21 +64,13 @@ const UploadImg = () => {
     const base64Image = canvas.toDataURL("image/png");
     setFinalCroppedImage(base64Image);
   }
+
+  const changeActiveIndex = (idx) => {
+    setActiveIndex(idx);
+  };
   return (
     <section id="img-upload" className="upload_section">
       <div className="container mb-5 p-4">
-        <Dropzone onDrop={handleDrop} maxFiles={1} accept="image/*">
-          {({ getRootProps, getInputProps }) => (
-            <div {...getRootProps({ className: "dropzone" })}>
-              <input {...getInputProps()} />
-              <PlusIcon className="upload-icon" />
-
-              <small>
-                upload or drag <br /> or refresh to try again
-              </small>
-            </div>
-          )}
-        </Dropzone>
         <div>
           <div className="row">
             <div className="row mt-5 mb-5">
@@ -95,6 +90,18 @@ const UploadImg = () => {
                 ad space
               </div>
             </div>
+            <Dropzone onDrop={handleDrop} maxFiles={1} accept="image/*">
+              {({ getRootProps, getInputProps }) => (
+                <div {...getRootProps({ className: "dropzone" })}>
+                  <input {...getInputProps()} />
+                  <PlusIcon className="upload-icon" />
+
+                  <small>
+                    upload or drag <br /> or refresh to try again
+                  </small>
+                </div>
+              )}
+            </Dropzone>
 
             <div
               ref={cropSection}
@@ -122,10 +129,38 @@ const UploadImg = () => {
           <div className="col-xl-2 col-lg-12 mb-xl-0 mb-2">
             <div className="h-100 row  border border-primary d-flex flex-xl-column justify-content-lg-evenly">
               <div className="social_links col-xl-12 col-lg-4 mb-xl-3">
-                <div className="social_links-item fw-bold">Instagram</div>
-                <div className="social_links-item">Facebook</div>
-                <div className="social_links-item">Whatsapp</div>
-                <div className="social_links-item">Tiktok</div>
+                <div
+                  className={`social_links-item ${
+                    activeIndex === 0 ? "fw-bolder" : ""
+                  }`}
+                  onClick={() => changeActiveIndex(0)}
+                >
+                  Instagram
+                </div>
+                <div
+                   className={`social_links-item ${
+                    activeIndex === 1 ? "fw-bolder" : ""
+                  }`}
+                  onClick={() => changeActiveIndex(1)}
+                >
+                  Facebook
+                </div>
+                <div
+                   className={`social_links-item ${
+                    activeIndex === 2 ? "fw-bolder" : ""
+                  }`}
+                  onClick={() => changeActiveIndex(2)}
+                >
+                  Whatsapp
+                </div>
+                <div
+                   className={`social_links-item ${
+                    activeIndex === 3 ? "fw-bolder" : ""
+                  }`}
+                  onClick={() => changeActiveIndex(3)}
+                >
+                  Tiktok
+                </div>
               </div>
               <div className="col-xl-12 col-lg-4 social_add text-primary flex-xl-grow-1">
                 ad space
@@ -133,8 +168,9 @@ const UploadImg = () => {
             </div>
           </div>
           <div className="col-xl-8 col-12">
-            <InstagramDesign />
-            {/* <Design finalCroppedImage={finalCroppedImage} /> */}
+            {activeIndex === 0 && <InstagramDesign finalCroppedImage={finalCroppedImage} />}
+            {activeIndex === 1 && <FacebookDesign finalCroppedImage={finalCroppedImage} />}
+            {activeIndex === 2 && <WhatsappDesign finalCroppedImage={finalCroppedImage} />}
           </div>
           <div className="col-xl-2 p-0 border border-primary">
             <div className="h-100 social_add fw-bolder d-flex justify-content-center align-items-center text-primary">

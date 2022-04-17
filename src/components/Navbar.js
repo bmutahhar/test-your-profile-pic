@@ -6,7 +6,7 @@ function Navbar() {
       <div className="container p-4">
         <nav className="navbar navbar-expand-lg navbar-light ">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="#home">
               testprofilepic
             </a>
             <button
@@ -36,7 +36,7 @@ function Navbar() {
                   </a>
                 </li>
                 <li className="nav-item ms-lg-5">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <a className="nav-link active" aria-current="page" href="#contact_section">
                     Contact
                   </a>
                 </li>
