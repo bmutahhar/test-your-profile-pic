@@ -78,7 +78,7 @@ const UploadImg = () => {
     <section id="img-upload" className="upload_section">
       <div className="container mb-5 p-4">
         <div>
-          <div className="row">
+          <div className="row" data-aos="zoom-in" data-aos-once="true" data-aos-duration="1000">
             <div className="row mt-5 mb-5">
               <div className="col-4 text-justify">
                 <h3>
@@ -132,7 +132,7 @@ const UploadImg = () => {
           </div>
         </div>
         <div ref={displaySection} className="row mt-4 mb-4">
-          <div className="col-xl-2 col-lg-12 mb-xl-0 mb-2">
+          <div className="col-xl-2 col-lg-12 mb-xl-0 mb-2" data-aos="slide-right" data-aos-duration="1000" data-aos-once="true">
             <div className="h-100 row   d-flex flex-xl-column justify-content-lg-evenly">
               <div className="social_links col-xl-12 col-lg-4 mb-xl-3">
                 <div
@@ -173,12 +173,12 @@ const UploadImg = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-8 col-12">
+          <div className="col-xl-8 col-12" data-aos="slide-up" data-aos-duration="1000" data-aos-once="true">
             <TransitionGroup>
               {activeIndex === 0 && (
                 <CSSTransition
                   in={activeIndex === 0}
-                  timeout={500}
+                  timeout={700}
                   classNames="fade"
                 >
                   <InstagramDesign finalCroppedImage={finalCroppedImage} />
@@ -187,7 +187,7 @@ const UploadImg = () => {
               {activeIndex === 1 && (
                 <CSSTransition
                   in={activeIndex === 1}
-                  timeout={500}
+                  timeout={700}
                   classNames="fade"
                 >
                   <FacebookDesign finalCroppedImage={finalCroppedImage} />
@@ -196,7 +196,7 @@ const UploadImg = () => {
               {activeIndex === 2 && (
                 <CSSTransition
                   in={activeIndex === 2}
-                  timeout={500}
+                  timeout={700}
                   classNames="fade"
                 >
                   <WhatsappDesign finalCroppedImage={finalCroppedImage} />
@@ -205,7 +205,7 @@ const UploadImg = () => {
               {activeIndex === 3 && (
                 <CSSTransition
                   in={activeIndex === 3}
-                  timeout={500}
+                  timeout={700}
                   classNames="fade"
                 >
                   <TiktokDesign finalCroppedImage={finalCroppedImage} />
@@ -213,7 +213,7 @@ const UploadImg = () => {
               )}
             </TransitionGroup>
           </div>
-          <div className="col-xl-2 p-0 ">
+          <div className="col-xl-2 p-0" data-aos="slide-left" data-aos-duration="1000" data-aos-once="true">
             <div className="h-100 social_add fw-bolder d-flex justify-content-center align-items-center text-primary">
               ad space
             </div>

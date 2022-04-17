@@ -1,8 +1,10 @@
 import React from "react";
+import AOS from 'aos'
 import "../assets/css/main.css";
 const Contact = () => {
+  AOS.init();
   return (
-    <div id="contact_section" className="container mb-5 p-4">
+    <div id="contact_section" className="container mb-5 p-4" data-aos="slide-right" data-aos-duration="1500" data-aos-once="true">
       <div className="row">
         <div className="col-md-6">
           <div className="contact_left d-flex flex-column justify-content-center">

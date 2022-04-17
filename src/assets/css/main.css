@@ -217,14 +217,14 @@ ul {
 }
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 1000ms;
+  transition: opacity 700ms;
 }
 .fade-exit {
   opacity: 1;
 }
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 1000ms;
+  transition: opacity 700ms;
 }
 
 .instagram_design,
