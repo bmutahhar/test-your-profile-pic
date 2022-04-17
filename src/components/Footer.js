@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="mt-5">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="social_add fw-bolder col-lg-8 mt-4 d-flex justify-content-center align-items-center">
+          <div className="social_add fw-bolder col-lg-8 mt-4 d-flex justify-content-center align-items-center text-primary">
             ad space
           </div>
 

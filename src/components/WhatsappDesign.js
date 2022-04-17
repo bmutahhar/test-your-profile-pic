@@ -6,10 +6,10 @@ import whatsapp4 from "../assets/img/whatsapp-4.png";
 
 const WhatsappDesign = ({ finalCroppedImage }) => {
   return (
-    <div className="p-0 border border-primary position-relative overflow-auto">
+    <div className="p-0  position-relative overflow-auto">
       <div className="row">
-        <div className="col-lg-6 col-md-12 border border-secondary">
-          <div className="position-relative m-0 border border-primary align-items-center" style={{width:"max-content"}}>
+        <div className="col-lg-6 col-md-12 ">
+          <div className="position-relative m-0  align-items-center" style={{width:"max-content"}}>
             <img src={whatsapp1} className="whatsapp_design-base1" alt="" />
             {finalCroppedImage != null && finalCroppedImage !== "" && (
               <img
@@ -28,7 +28,7 @@ const WhatsappDesign = ({ finalCroppedImage }) => {
             )}
           </div>
           <div
-            className="pt-4 position-relative border border-secondary"
+            className="pt-4 position-relative "
             style={{ width: "max-content" }}
           >
             <img src={whatsapp2} className="whatsapp_design-base2" alt="" />
@@ -44,7 +44,7 @@ const WhatsappDesign = ({ finalCroppedImage }) => {
           </div>
         </div>
 
-        <div className="col-lg-6 col-md-12 border border-secondary">
+        <div className="col-lg-6 col-md-12 ">
           <div className="position-relative" style={{ width: "max-content" }}>
             <img src={whatsapp4} alt="" className="whatsapp_design-base3" />
             {finalCroppedImage != null && finalCroppedImage !== "" && (

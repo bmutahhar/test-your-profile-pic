@@ -9,6 +9,7 @@ import { ReactComponent as PlusIcon } from "../assets/icons/plus-circle.svg";
 import "react-image-crop/dist/ReactCrop.css";
 import FacebookDesign from "./FacebookDesign";
 import WhatsappDesign from "./WhatsappDesign";
+import TiktokDesign from "./TiktokDesign";
 
 const UploadImg = () => {
   const [tempImage, setTempImage] = useState(null);
@@ -16,6 +17,7 @@ const UploadImg = () => {
   const [finalCroppedImage, setFinalCroppedImage] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const cropSection = useRef(null);
+  const displaySection = useRef(null);
 
   const [crop, setCrop] = useState({
     aspect: 1 / 1,
@@ -63,6 +65,8 @@ const UploadImg = () => {
 
     const base64Image = canvas.toDataURL("image/png");
     setFinalCroppedImage(base64Image);
+    setTempImage(null);
+    cropSection?.current.scrollIntoView();
   }
 
   const changeActiveIndex = (idx) => {
@@ -125,9 +129,9 @@ const UploadImg = () => {
             </div>
           </div>
         </div>
-        <div className="row mt-4 mb-4">
+        <div ref={displaySection} className="row mt-4 mb-4">
           <div className="col-xl-2 col-lg-12 mb-xl-0 mb-2">
-            <div className="h-100 row  border border-primary d-flex flex-xl-column justify-content-lg-evenly">
+            <div className="h-100 row   d-flex flex-xl-column justify-content-lg-evenly">
               <div className="social_links col-xl-12 col-lg-4 mb-xl-3">
                 <div
                   className={`social_links-item ${
@@ -138,7 +142,7 @@ const UploadImg = () => {
                   Instagram
                 </div>
                 <div
-                   className={`social_links-item ${
+                  className={`social_links-item ${
                     activeIndex === 1 ? "fw-bolder" : ""
                   }`}
                   onClick={() => changeActiveIndex(1)}
@@ -146,7 +150,7 @@ const UploadImg = () => {
                   Facebook
                 </div>
                 <div
-                   className={`social_links-item ${
+                  className={`social_links-item ${
                     activeIndex === 2 ? "fw-bolder" : ""
                   }`}
                   onClick={() => changeActiveIndex(2)}
@@ -154,7 +158,7 @@ const UploadImg = () => {
                   Whatsapp
                 </div>
                 <div
-                   className={`social_links-item ${
+                  className={`social_links-item ${
                     activeIndex === 3 ? "fw-bolder" : ""
                   }`}
                   onClick={() => changeActiveIndex(3)}
@@ -168,11 +172,20 @@ const UploadImg = () => {
             </div>
           </div>
           <div className="col-xl-8 col-12">
-            {activeIndex === 0 && <InstagramDesign finalCroppedImage={finalCroppedImage} />}
-            {activeIndex === 1 && <FacebookDesign finalCroppedImage={finalCroppedImage} />}
-            {activeIndex === 2 && <WhatsappDesign finalCroppedImage={finalCroppedImage} />}
+            {activeIndex === 0 && (
+              <InstagramDesign finalCroppedImage={finalCroppedImage} />
+            )}
+            {activeIndex === 1 && (
+              <FacebookDesign finalCroppedImage={finalCroppedImage} />
+            )}
+            {activeIndex === 2 && (
+              <WhatsappDesign finalCroppedImage={finalCroppedImage} />
+            )}
+            {activeIndex === 3 && (
+              <TiktokDesign finalCroppedImage={finalCroppedImage} />
+            )}
           </div>
-          <div className="col-xl-2 p-0 border border-primary">
+          <div className="col-xl-2 p-0 ">
             <div className="h-100 social_add fw-bolder d-flex justify-content-center align-items-center text-primary">
               ad space
             </div>

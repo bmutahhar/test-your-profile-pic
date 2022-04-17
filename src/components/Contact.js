@@ -8,7 +8,8 @@ const Contact = () => {
           <div className="contact_left d-flex flex-column justify-content-center">
             <h6 className="text-uppercase contact_title fw-bold">Contact</h6>
             <h1 className="mb-5">
-              Did you know, there are no dumb questions. So please ask…
+              Do you have a question? Or are you interested in advertising? Let
+              us know..
             </h1>
             <img src={require("../assets/img/tpp2.png")} />
           </div>

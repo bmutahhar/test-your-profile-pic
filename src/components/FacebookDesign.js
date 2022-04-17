@@ -6,11 +6,11 @@ import fb4 from "../assets/img/FB-4.png"
 
 const FacebookDesign = ({ finalCroppedImage }) => {
   return (
-    <div className="p-0 border border-primary position-relative overflow-auto">
+    <div className="p-0  position-relative overflow-auto">
       <div className="row">
-        <div className="col-lg-6 col-md-12 border border-secondary">
+        <div className="col-lg-6 col-md-12 ">
           <div
-            className="position-relative m-0 border border-primary align-items-center"
+            className="position-relative m-0  align-items-center"
           >
             <img src={fb1} alt="" />
             {finalCroppedImage != null && finalCroppedImage != "" && (
@@ -37,7 +37,7 @@ const FacebookDesign = ({ finalCroppedImage }) => {
             )}
           </div>
           <div
-            className="p-xl-5 p-3 position-relative"
+            className="p-5 position-relative"
             style={{ width: "max-content" }}
           >
             <img src={fb3} alt="" className="facebook_design-base2" />

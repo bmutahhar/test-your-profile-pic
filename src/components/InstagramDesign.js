@@ -7,11 +7,11 @@ import insta5 from "../assets/img/instagram-5.png";
 
 const InstagramDesign = ({ finalCroppedImage }) => {
   return (
-    <div className="p-0 border border-primary position-relative overflow-auto">
+    <div className="p-0  position-relative overflow-auto">
       <div className="row">
-        <div className="col-lg-6 col-md-12 border border-primary">
+        <div className="col-lg-6 col-md-12 ">
           <div
-            className="position-relative m-0 border border-primary align-items-center"
+            className="position-relative m-0  align-items-center"
           >
             <img src={insta1} alt="" />
             {finalCroppedImage != null && finalCroppedImage != "" && (
@@ -23,7 +23,7 @@ const InstagramDesign = ({ finalCroppedImage }) => {
             )}
           </div>
           <div
-            className="position-relative border border-secondary"
+            className="position-relative "
             style={{ width: "max-content" }}
           >
             <img src={insta5} alt="" />
