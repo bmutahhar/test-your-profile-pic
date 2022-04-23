@@ -16,6 +16,10 @@ body {
   text-decoration: none;
   font-weight: 500;
 }
+
+.banner-btn {
+  width: 25%;
+}
 .arrow_icon {
   font-size: 19px;
   margin-left: 30px;
@@ -75,6 +79,7 @@ ul {
   background-color: rgba(216, 216, 216, 0.3);
   color: #007aff;
   margin-bottom: 20px;
+  width: 95%;
 }
 .dropzone i {
   font-size: 70px;
@@ -202,7 +207,8 @@ ul {
   width: 100%;
 }
 @media (max-width: 1200px) {
-  .social_add {
+  .social_add,
+  .upload_sec_add {
     background-color: #d8d8d8;
     height: 200px !important;
     margin-top: 50px;
@@ -214,6 +220,7 @@ ul {
 
 .fade-enter {
   opacity: 0;
+  transition: opacity 700ms;
 }
 .fade-enter-active {
   opacity: 1;
@@ -221,6 +228,7 @@ ul {
 }
 .fade-exit {
   opacity: 1;
+  transition: opacity 700ms;
 }
 .fade-exit-active {
   opacity: 0;
@@ -333,7 +341,7 @@ ul {
 .facebook_design-profile1 {
   position: absolute;
   top: 103px;
-  left: 138px;
+  left: 103px;
   border-radius: 50%;
   width: 170px;
   height: 170px;
@@ -435,11 +443,25 @@ ul {
   position: fixed;
   bottom: 80px;
   right: 25px;
-  border:none;
-  outline:none;
+  border: none;
+  outline: none;
+  z-index: 1000;
 }
 
-.scroll-to-top-btn:focus{
-  outline:none !important;
-  border:none;
+.scroll-to-top-btn:focus {
+  outline: none !important;
+  border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-btn {
+    width: 100%;
+  }
+
+  .instagram-design,
+  .facebook-design,
+  .whatsapp-design,
+  .tiktok-design {
+    overflow: auto;
+  }
 }

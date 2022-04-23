@@ -26,7 +26,7 @@ function Navbar() {
         <nav className="navbar navbar-expand-lg navbar-light ">
           <div className="container-fluid">
             <a className="navbar-brand" href="#home">
-              testprofilepic
+            testprofilepicture
             </a>
             <button
               className="navbar-toggler"

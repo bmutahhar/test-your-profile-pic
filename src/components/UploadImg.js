@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Dropzone from "react-dropzone";
-import Design from "./Design";
 import InstagramDesign from "./InstagramDesign";
 import ReactCrop from "react-image-crop";
 import { ReactComponent as PlusIcon } from "../assets/icons/plus-circle.svg";
@@ -13,7 +12,7 @@ import TiktokDesign from "./TiktokDesign";
 const UploadImg = () => {
   const [tempImage, setTempImage] = useState(null);
   const [cropImage, setcropImage] = useState(null);
-  const [finalCroppedImage, setFinalCroppedImage] = useState(null);
+  const [finalCroppedImage, setFinalCroppedImage] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const cropSection = useRef(null);
   const displaySection = useRef(null);
@@ -28,15 +27,24 @@ const UploadImg = () => {
   });
 
   const handleDrop = (acceptedFiles) => {
-    setFinalCroppedImage(null);
-    acceptedFiles.map((file) => {
-      setTempImage(window.URL.createObjectURL(file));
-    });
+    const file = acceptedFiles[0];
+    setTempImage(window.URL.createObjectURL(file));
     cropSection?.current.scrollIntoView();
   };
 
   function getCroppedImg() {
+    setFinalCroppedImage(null);
+  }
+
+  const changeActiveIndex = (idx) => {
+    setActiveIndex(idx);
+  };
+
+  useEffect(() => {
     if (cropImage == null) {
+      return;
+    }
+    if (finalCroppedImage === "") {
       return;
     }
     const canvas = document.createElement("canvas");
@@ -67,20 +75,19 @@ const UploadImg = () => {
 
     const base64Image = canvas.toDataURL("image/png");
     setFinalCroppedImage(base64Image);
-    setTempImage(null);
-    cropSection?.current.scrollIntoView();
-  }
-
-  const changeActiveIndex = (idx) => {
-    setActiveIndex(idx);
-  };
+  }, [finalCroppedImage, cropImage]);
   return (
     <section id="img-upload" className="upload_section">
       <div className="container mb-5 p-4">
         <div>
-          <div className="row" data-aos="zoom-in" data-aos-once="true" data-aos-duration="1000">
+          <div
+            className="row d-flex align-items-center justify-content-center"
+            data-aos="zoom-in"
+            data-aos-once="true"
+            data-aos-duration="1000"
+          >
             <div className="row mt-5 mb-5">
-              <div className="col-4 text-justify">
+              <div className="col-lg-4 col-md-12 text-justify">
                 <h3>
                   Select the part of the image that you wish to set as your
                   profile.
@@ -92,7 +99,7 @@ const UploadImg = () => {
                   make sure to hit the button below.
                 </p>
               </div>
-              <div className="upload_sec_add fw-bolder col-8 d-flex justify-content-center align-items-center text-primary">
+              <div className="upload_sec_add fw-bolder col-lg-8 col-md-12 d-flex justify-content-center align-items-center text-primary">
                 ad space
               </div>
             </div>
@@ -132,7 +139,12 @@ const UploadImg = () => {
           </div>
         </div>
         <div ref={displaySection} className="row mt-4 mb-4">
-          <div className="col-xl-2 col-lg-12 mb-xl-0 mb-2" data-aos="slide-right" data-aos-duration="1000" data-aos-once="true">
+          <div
+            className="col-xl-2 col-lg-12 mb-xl-0 mb-4"
+            data-aos="slide-right"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             <div className="h-100 row   d-flex flex-xl-column justify-content-lg-evenly">
               <div className="social_links col-xl-12 col-lg-4 mb-xl-3">
                 <div
@@ -173,7 +185,12 @@ const UploadImg = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-8 col-12" data-aos="slide-up" data-aos-duration="1000" data-aos-once="true">
+          <div
+            className="col-xl-8 col-12"
+            data-aos="slide-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             <TransitionGroup>
               {activeIndex === 0 && (
                 <CSSTransition
@@ -213,7 +230,12 @@ const UploadImg = () => {
               )}
             </TransitionGroup>
           </div>
-          <div className="col-xl-2 p-0" data-aos="slide-left" data-aos-duration="1000" data-aos-once="true">
+          <div
+            className="col-xl-2 p-0"
+            data-aos="slide-left"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             <div className="h-100 social_add fw-bolder d-flex justify-content-center align-items-center text-primary">
               ad space
             </div>
