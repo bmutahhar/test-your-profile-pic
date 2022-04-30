@@ -1,10 +1,21 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import insta1 from "../assets/img/instagram-1.png";
+// import insta1 from "../assets/img/instagram-1.png";
+// import insta2 from "../assets/img/instagram-2.png";
+// import insta3 from "../assets/img/instagram-3.png";
+// import insta4 from "../assets/img/instagram-4.png";
+// import insta5 from "../assets/img/instagram-5.png";
+
+import { ReactComponent as Insta1 } from "../assets/img/instagram-1.svg";
+import { ReactComponent as Insta2 } from "../assets/img/instagram-2.svg";
+import { ReactComponent as Insta3 } from "../assets/img/instagram-3.svg";
+import { ReactComponent as Insta4 } from "../assets/img/instagram-4.svg";
+import { ReactComponent as Insta5 } from "../assets/img/instagram-5.svg";
+import insta1 from "../assets/img/instagram-1.svg";
 import insta2 from "../assets/img/instagram-2.svg";
-import insta3 from "../assets/img/instagram-3.png";
-import insta4 from "../assets/img/instagram-4.png";
-import insta5 from "../assets/img/instagram-5.png";
+import insta3 from "../assets/img/instagram-3.svg";
+import insta4 from "../assets/img/instagram-4.svg";
+import insta5 from "../assets/img/instagram-5.svg";
 
 const InstagramDesign = ({ finalCroppedImage }) => {
   return (
@@ -13,7 +24,8 @@ const InstagramDesign = ({ finalCroppedImage }) => {
         <div className="row">
           <div className="col-lg-6 col-md-12 d-lg-block d-flex flex-column justify-content-center align-items-center pb-4 instagram-design">
             <div className="position-relative m-0  align-items-center">
-              <img src={insta1} alt="" className="image" />
+              {/* <img src={insta1} alt="" className="image" /> */}
+              <Insta1 className="image" />
               {finalCroppedImage != null && finalCroppedImage !== "" && (
                 <CSSTransition
                   in={finalCroppedImage != null && finalCroppedImage !== ""}
@@ -32,7 +44,8 @@ const InstagramDesign = ({ finalCroppedImage }) => {
               className="position-relative "
               style={{ width: "max-content" }}
             >
-              <img src={insta5} alt="" className="image" />
+              {/* <img src={insta5} alt="" className="image" /> */}
+              <Insta5 className="image" />
               {finalCroppedImage != null && finalCroppedImage !== "" && (
                 <>
                   <CSSTransition
@@ -66,11 +79,12 @@ const InstagramDesign = ({ finalCroppedImage }) => {
               className="py-4 position-relative"
               style={{ width: "max-content" }}
             >
-              <img
+              {/* <img
                 src={insta2}
                 alt=""
                 className="instagram_design-base1 image"
-              />
+              /> */}
+              <Insta2 className="instagram_design-base1 image" />
               {finalCroppedImage != null && finalCroppedImage !== "" && (
                 <CSSTransition
                   in={finalCroppedImage != null && finalCroppedImage !== ""}
@@ -89,11 +103,12 @@ const InstagramDesign = ({ finalCroppedImage }) => {
               className="py-4 position-relative"
               style={{ width: "max-content" }}
             >
-              <img
+              {/* <img
                 src={insta3}
                 alt=""
                 className="instagram_design-base2 image"
-              />
+              /> */}
+              <Insta3 className="instagram_design-base2 image" />
               {finalCroppedImage != null && finalCroppedImage !== "" && (
                 <CSSTransition
                   in={finalCroppedImage != null && finalCroppedImage !== ""}
@@ -112,11 +127,12 @@ const InstagramDesign = ({ finalCroppedImage }) => {
               className="py-2 position-relative"
               style={{ width: "max-content" }}
             >
-              <img
+              {/* <img
                 src={insta4}
                 alt=""
                 className="instagram_design-base3 image"
-              />
+              /> */}
+              <Insta4 className="instagram_design-base3 image" />
               {finalCroppedImage != null && finalCroppedImage !== "" && (
                 <CSSTransition
                   in={finalCroppedImage != null && finalCroppedImage !== ""}

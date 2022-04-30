@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="304.1" height="355" viewBox="0 0 304.1 355"><g transform="translate(0.5 0.5)"><g transform="translate(0 2)"><g transform="translate(0 -2)"><rect width="285.6" height="354" rx="3" fill="#fff" stroke="#dadbda" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1"/><text transform="translate(142.8 253.144)" fill="#262626" font-size="16" font-family="ArialMT, Arial"><tspan x="-12.895" y="14">test</tspan></text><g transform="translate(20.4 288)"><rect width="242.4" height="50.4" rx="3" fill="#3897f0"/><text transform="translate(80.8 17.784)" fill="#f9f9f9" font-size="18" font-family="SegoeUI, Segoe UI" letter-spacing="0.046em"><tspan x="0" y="19" xml:space="preserve">   Follow</tspan></text></g><path d="M14.641,0,7.784,6.849.959.033,0,.991,6.825,7.8,0,14.617l.959.951L7.784,8.759,14.641,15.6l.959-.951L8.743,7.8,15.6.959Z" transform="translate(247.2 22.8)" fill="#999"/><text transform="translate(141.6 220.087)" fill="#262626" font-size="20" font-family="SegoeUI, Segoe UI" letter-spacing="0.015em"><tspan x="-77.957" y="22">testprofilepicture</tspan></text></g><circle cx="82.8" cy="82.8" r="82.8" transform="translate(60 31.2)" fill="#7f7f96"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="288px" height="356px" viewBox="0 0 288 356" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Card / Suggested</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Instagram" transform="translate(-788.000000, -1720.000000)">
+            <g id="Card-/-Suggested" transform="translate(789.000000, 1721.000000)">
+                <g id="Suggested-Card">
+                    <rect id="Rectangle" stroke="#DADBDA" fill="#FFFFFF" stroke-linecap="square" x="0" y="0" width="285.6" height="354" rx="3"></rect>
+                    <text id="test" font-family="SFProDisplay-Regular" font-size="16" font-weight="normal" fill="#262626">
+                        <tspan x="128.705469" y="266.5">test</tspan>
+                    </text>
+                    <g id="Follow-Button" transform="translate(20.400000, 288.000000)">
+                        <rect id="Rectangle" fill="#3897F0" x="0" y="0" width="242.4" height="50.4" rx="3"></rect>
+                        <text id="Follow" font-family="SFProDisplay-Medium, SF Pro Display" font-size="18" font-weight="400" letter-spacing="0.830769264" fill="#F9F9F9">
+                            <tspan x="95" y="29.284">Follow</tspan>
+                        </text>
+                    </g>
+                    <polygon id="Shape" fill="#999999" points="261.84125 22.8 254.98375 29.649375 248.15875 22.8325 247.2 23.79125 254.025 30.6 247.2 37.416875 248.15875 38.3675 254.98375 31.55875 261.84125 38.4 262.8 37.449375 255.9425 30.6 262.8 23.75875"></polygon>
+                    <text id="testprofilepic" font-family="SFProDisplay-Medium, SF Pro Display" font-size="20" font-weight="400" letter-spacing="0.307692312" fill="#262626">
+                        <tspan x="65.4372145" y="232.6">testprofilepicture</tspan>
+                    </text>
+                </g>
+                <circle id="Oval" fill="#7F7F96" cx="142.8" cy="114" r="82.8"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
